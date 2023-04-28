@@ -8,7 +8,7 @@ from PIL import Image, ImageTk
 # GUI
 root = tk.Tk()
 
-root.title("Currency converter:GeeksForGeeks")
+root.title("Current-See")
 
 Tops = tk.Frame(root, bg="#e6e5e5", pady=2, width=1850, height=100, relief="ridge")
 Tops.grid(row=0, column=0)
@@ -16,9 +16,10 @@ Tops.grid(row=0, column=0)
 headlabel = tk.Label(
     Tops,
     font=("lato black", 19, "bold"),
-    text="Currency converter :GeeksForGeeks ",
+    text="Current-See",
     bg="#e6e5e5",
     fg="black",
+    width=40,
 )
 headlabel.grid(row=1, column=0, sticky="W")
 
@@ -67,7 +68,7 @@ def RealTimeCurrencyConversion():
 
 def get_image(s):
     try:
-        return ImageTk.PhotoImage(Image.open(CURRENCY_TO_ASSET[s]))
+        return ImageTk.PhotoImage(Image.open(CURRENCY_TO_ASSET[s]).resize((350, 150)))
     except (FileNotFoundError, KeyError):
         return None
 
