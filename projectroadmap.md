@@ -4,7 +4,12 @@
 - [x] Search github for code similar to mine -- Done
 - [x] Run code from GeeksForGeeks currency converter -- Done
 - [ ] Run code from CurrencyConverter 0.17.6 -- WIP
-- [ ] Update Sprint 2 -- WIP
+- [x] Update Sprint 2 (Roadmap created) -- DONE
 
 > Sprint 2
-- [ ] 
+- [x] Set up Roadmap 
+- [ ] Find similar code that relates to pulling images from a database
+- [ ] modify code to with images of currency
+- [ ] integrate GeeksForGeeks currency converter and image pulling together
+- [ ] Change up the UI to make it more frienldy looking
+- [ ] Clean up code test that it works
