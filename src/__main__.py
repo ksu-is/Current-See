@@ -63,6 +63,8 @@ def RealTimeCurrencyConversion():
     else:
         new_amt = c.convert(from_currency, to_currency, float(Amount1_field.get()))
         new_amount = float("{:.4f}".format(new_amt))
+        # https://stackoverflow.com/a/54040005
+        Amount2_field.delete(0, tk.END)
         Amount2_field.insert(0, str(new_amount))
 
 
