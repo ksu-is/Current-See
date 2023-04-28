@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "current-see"
+version = "0.1.0"
+description = ""
+authors = ["Princeton To <122326345+princetont@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "current_see"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+forex-python = "^1.8"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

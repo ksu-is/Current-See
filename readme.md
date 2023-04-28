@@ -14,8 +14,8 @@ Play on the word "currency" where "Current" and "See".
 - pull relatively current info for the conversion 
 
 ## How to Get Started
->Work in Process
 
+- [Poetry](https://python-poetry.org/) for dependency management
 
 
 ## Codes used/referenced 
