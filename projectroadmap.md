@@ -8,8 +8,9 @@
 
 > Sprint 2
 - [x] Set up Roadmap 
-- [ ] Find similar code that relates to pulling images from a database
-- [ ] Modify code to with images of currency
-- [ ] Integrate GeeksForGeeks currency converter and image pulling together
+- [ ] ~~Find similar code that relates to pulling images from a database~~
+- [x] Modify code to with images of currency
+  - [ ] Add images of all supported currencies
+- [x] Integrate GeeksForGeeks currency converter and image pulling together
 - [ ] Change up the UI to make it more frienldy looking
 - [ ] Clean up code test that it works
