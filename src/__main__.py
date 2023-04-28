@@ -2,6 +2,8 @@ import tkinter as tk
 import tkinter.messagebox
 from forex_python.converter import CurrencyRates
 from currency_list import CURRENCIES, CURRENCY_TO_ASSET
+from PIL import Image, ImageTk
+
 
 # GUI
 root = tk.Tk()
@@ -25,9 +27,21 @@ variable2 = tk.StringVar(root)
 
 variable1.set("currency")
 variable2.set("currency")
+
+
+Image_Label_From = tk.Label(
+    root,
+    padx=2,
+)
+Image_Label_From.grid(row=2, column=1, sticky="E")
+Image_Label_To = tk.Label(
+    root,
+    padx=2,
+)
+Image_Label_To.grid(row=8, column=1, sticky="E")
+
+
 # Function To For Real Time Currency Conversion
-
-
 def RealTimeCurrencyConversion():
     c = CurrencyRates()
 
@@ -51,6 +65,24 @@ def RealTimeCurrencyConversion():
         Amount2_field.insert(0, str(new_amount))
 
 
+def get_image(s):
+    try:
+        return ImageTk.PhotoImage(Image.open(CURRENCY_TO_ASSET[s]))
+    except (FileNotFoundError, KeyError):
+        return None
+
+
+def update_images(_):
+    from_currency = variable1.get()
+    to_currency = variable2.get()
+    Image_From = get_image(from_currency)
+    Image_To = get_image(to_currency)
+    Image_Label_From.image = Image_From
+    Image_Label_From.configure(image=Image_From)
+    Image_Label_To.image = Image_To
+    Image_Label_To.configure(image=Image_To)
+
+
 # clearing all the data entered by the user
 def clear_all():
     Amount1_field.delete(0, tk.END)
@@ -58,7 +90,7 @@ def clear_all():
 
 
 root.configure(background="#e6e5e5")
-root.geometry("700x400")
+root.geometry("1000x700")
 
 Label_1 = tk.Label(
     root,
@@ -130,8 +162,8 @@ Label_1 = tk.Label(
 Label_1.grid(row=7, column=0, sticky="W")
 
 
-FromCurrency_option = tk.OptionMenu(root, variable1, *CURRENCIES)
-ToCurrency_option = tk.OptionMenu(root, variable2, *CURRENCIES)
+FromCurrency_option = tk.OptionMenu(root, variable1, *CURRENCIES, command=update_images)
+ToCurrency_option = tk.OptionMenu(root, variable2, *CURRENCIES, command=update_images)
 
 FromCurrency_option.grid(row=3, column=0, ipadx=45, sticky="E")
 ToCurrency_option.grid(row=4, column=0, ipadx=45, sticky="E")
