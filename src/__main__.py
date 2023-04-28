@@ -61,11 +61,18 @@ def RealTimeCurrencyConversion():
         )
 
     else:
-        new_amt = c.convert(from_currency, to_currency, float(Amount1_field.get()))
-        new_amount = float("{:.4f}".format(new_amt))
-        # https://stackoverflow.com/a/54040005
-        Amount2_field.delete(0, tk.END)
-        Amount2_field.insert(0, str(new_amount))
+        value_to_convert = Amount1_field.get()
+        try:
+            new_amt = c.convert(from_currency, to_currency, float(value_to_convert))
+            new_amount = float("{:.4f}".format(new_amt))
+            # https://stackoverflow.com/a/54040005
+            Amount2_field.delete(0, tk.END)
+            Amount2_field.insert(0, str(new_amount))
+        except ValueError:
+            tkinter.messagebox.showinfo(
+                "Error !!",
+                f"Could not convert {value_to_convert} to a float\n Please a valid number.",
+            )
 
 
 def get_image(s):
