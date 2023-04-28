@@ -13,4 +13,4 @@
   - [x] Add images of all supported currencies
 - [x] Integrate GeeksForGeeks currency converter and image pulling together
 - [x] Change up the UI to make it more friendly looking
-- [ ] Clean up code test that it works
+- [x] Clean up code test that it works
